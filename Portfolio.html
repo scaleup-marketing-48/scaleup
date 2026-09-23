@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sample Concepts — ScaleUp Marketing</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&family=Cairo:wght@400;600;700;800&display=swap">
+<style>
+:root{--bg:#FFFFFF;--bg2:#F8FAFC;--ink:#0F172A;--ink2:#1E293B;--muted:#475569;--line:#E2E8F0;--blue:#0080FF;--cyan:#00A3FF;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0B1220;--bg2:#0F172A;--ink:#F8FAFC;--ink2:#E2E8F0;--muted:#94A3B8;--line:#1E293B}}
+:root[data-theme="dark"]{--bg:#0B1220;--bg2:#0F172A;--ink:#F8FAFC;--ink2:#E2E8F0;--muted:#94A3B8;--line:#1E293B}
+html{scroll-behavior:smooth;height:auto}
+body{background:var(--bg);color:var(--ink);font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif}
+[dir="rtl"] body{font-family:'Cairo','Plus Jakarta Sans',sans-serif}
+.grad{background:linear-gradient(135deg,var(--blue),var(--cyan))}
+.gtext{background:linear-gradient(90deg,#0066FF,#00A3FF);-webkit-background-clip:text;background-clip:text;color:transparent}
+.btn{background:linear-gradient(135deg,#0066FF,#00A3FF);color:#fff;font-weight:700;border-radius:12px;transition:.25s;box-shadow:0 6px 20px -6px rgba(0,128,255,.6)}
+.btn:hover{transform:translateY(-2px);box-shadow:0 0 0 4px rgba(0,163,255,.2),0 10px 30px -4px rgba(0,163,255,.8)}
+.btn:focus-visible,a:focus-visible,button:focus-visible,select:focus-visible{outline:3px solid var(--cyan);outline-offset:2px}
+.card{background:var(--bg);border:1px solid var(--line);border-radius:20px;overflow:hidden;transition:.3s}
+.card:hover{transform:translateY(-6px);box-shadow:0 20px 40px -18px rgba(0,128,255,.35)}
+/* Sticky promo button */
+.promo-btn{position:fixed;bottom:20px;right:20px;z-index:99;animation:bounce 3s infinite}
+[dir="rtl"] .promo-btn{right:auto;left:20px}
+@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@media (prefers-reduced-motion:reduce){.btn,.card,.promo-btn{transition:none;animation:none}}
+</style>
+</head>
+<body>
+<header class="sticky top-0 z-50 backdrop-blur border-b" style="background:rgba(15,23,42,.92);border-color:#1E293B;padding-top:env(safe-area-inset-top,0px)">
+  <div class="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between gap-4">
+    <a href="index.html" class="flex items-center gap-2" aria-label="ScaleUp Marketing home">
+      <img src="logo-mark.png" alt="" class="h-10 w-auto">
+      <span class="leading-none"><span class="block text-xl font-extrabold gtext">ScaleUp</span><span class="block text-[10px] tracking-[.35em] font-bold text-white">MARKETING</span></span>
+    </a>
+    <!-- Separated Links using flex gap-6 -->
+    <nav class="hidden md:flex gap-6 text-sm font-semibold text-slate-300">
+      <a class="hover:text-[#00A3FF] transition" href="index.html" data-i18n="nav_home">Home</a>
+      <a class="hover:text-[#00A3FF] transition" href="index.html" data-i18n="nav_services">Services</a>
+      <a class="hover:text-[#00A3FF] transition" href="index.html" data-i18n="nav_packages">Packages</a>
+      <a class="text-white font-bold" href="#top" aria-current="page" data-i18n="nav_portfolio">Portfolio</a>
+      <a class="hover:text-[#00A3FF] transition" href="index.html" data-i18n="nav_why">Why Us</a>
+      <a class="hover:text-[#00A3FF] transition" href="#cta" data-i18n="nav_contact">Contact</a>
+    </nav>
+    <div class="flex items-center gap-3">
+      <select id="langSelect" class="bg-slate-800 text-slate-200 text-xs font-bold px-2 py-1.5 rounded-lg border border-slate-700 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#00A3FF]">
+        <option value="en">🌐 EN</option>
+        <option value="fr">🌐 FR</option>
+        <option value="ar">🌐 العربية</option>
+      </select>
+      <a href="#cta" class="btn px-4 py-2 text-xs sm:text-sm" data-i18n="btn_audit">Free Audit</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+<section style="background:var(--bg2)" class="py-16 md:py-20">
+  <div class="max-w-6xl mx-auto px-5">
+    <h1 class="text-4xl sm:text-5xl font-extrabold leading-tight max-w-3xl" data-i18n="port_title">See what we'd build for <span class="gtext">your business</span></h1>
+    <p class="mt-5 text-lg max-w-2xl" style="color:var(--muted)" data-i18n="port_desc">We're a new agency, so these are sample concepts, not client projects. They show the quality and structure you get with each service.</p>
+  </div>
+</section>
+
+<section class="py-14" style="background:var(--bg)">
+  <div class="max-w-6xl mx-auto px-5 grid md:grid-cols-3 gap-6">
+    <article class="card">
+      <div class="h-44 p-4 flex items-end" style="background:linear-gradient(135deg,#0066FF,#00A3FF)">
+        <div class="w-full rounded-lg bg-white p-3 text-slate-800"><div class="text-sm font-bold" data-i18n="c1_biz">Your Business Name</div><div class="text-xs text-amber-500">★★★★★ <span class="text-slate-500" data-i18n="c1_rev">Reviews</span></div><div class="mt-2 flex gap-2 text-[10px] font-bold"><span class="px-2 py-1 rounded-full bg-blue-100 text-blue-700" data-i18n="c1_call">Call</span><span class="px-2 py-1 rounded-full bg-blue-100 text-blue-700" data-i18n="c1_dir">Directions</span><span class="px-2 py-1 rounded-full bg-blue-100 text-blue-700" data-i18n="c1_web">Website</span></div></div>
+      </div>
+      <div class="p-6"><p class="text-xs font-bold text-[#0080FF]" data-i18n="c1_tag">Sample concept · Google My Business</p><h2 class="mt-1 text-xl font-bold" data-i18n="c1_h">An optimized Google profile</h2>
+      <ul class="mt-3 space-y-1.5 text-sm" style="color:var(--muted)"><li data-i18n="c1_b1">✅ Verified listing with correct categories</li><li data-i18n="c1_b2">✅ Professional photos and keywords</li><li data-i18n="c1_b3">✅ One-tap review link for customers</li></ul></div>
+    </article>
+    <article class="card">
+      <div class="h-44 p-4 flex items-end" style="background:linear-gradient(135deg,#0F172A,#1E293B)">
+        <div class="w-full rounded-lg bg-white/95 p-3"><div class="flex gap-1"><span class="w-2 h-2 rounded-full bg-red-400"></span><span class="w-2 h-2 rounded-full bg-amber-400"></span><span class="w-2 h-2 rounded-full bg-emerald-400"></span></div><div class="mt-2 h-2 w-2/3 rounded bg-slate-300"></div><div class="mt-1.5 h-2 w-1/2 rounded bg-slate-200"></div><div class="mt-3 flex gap-2"><div class="h-6 w-24 rounded bg-emerald-500"></div><div class="h-6 w-20 rounded grad"></div></div></div>
+      </div>
+      <div class="p-6"><p class="text-xs font-bold text-[#0080FF]" data-i18n="c2_tag">Sample concept · Showcase Website</p><h2 class="mt-1 text-xl font-bold" data-i18n="c2_h">A one-page mobile website</h2>
+      <ul class="mt-3 space-y-1.5 text-sm" style="color:var(--muted)"><li data-i18n="c2_b1">✅ Services, hours and location on one page</li><li data-i18n="c2_b2">✅ WhatsApp and click-to-call buttons</li><li data-i18n="c2_b3">✅ Built to load fast on phones</li></ul></div>
+    </article>
+    <article class="card">
+      <div class="h-44 p-4 flex items-end gap-2" style="background:linear-gradient(135deg,#1E293B,#0F172A)">
+        <div class="flex-1 rounded-t bg-slate-600" style="height:30%"></div><div class="flex-1 rounded-t bg-slate-500" style="height:45%"></div><div class="flex-1 rounded-t bg-blue-500" style="height:65%"></div><div class="flex-1 rounded-t grad" style="height:90%"></div>
+      </div>
+      <div class="p-6"><p class="text-xs font-bold text-[#0080FF]" data-i18n="c3_tag">Sample concept · Monthly Boost</p><h2 class="mt-1 text-xl font-bold" data-i18n="c3_h">A monthly progress report</h2>
+      <ul class="mt-3 space-y-1.5 text-sm" style="color:var(--muted)"><li data-i18n="c3_b1">✅ Profile views, calls and direction requests</li><li data-i18n="c3_b2">✅ New reviews and replies</li><li data-i18n="c3_b3">✅ Ads results and next steps</li></ul></div>
+    </article>
+  </div>
+</section>
+
+<section id="cta" class="py-20 relative overflow-hidden" style="background:#0F172A;color:#F8FAFC">
+  <div class="absolute -bottom-40 -right-40 w-[28rem] h-[28rem] rounded-full opacity-25 blur-3xl grad"></div>
+  <div class="max-w-3xl mx-auto px-5 text-center relative">
+    <h2 class="text-3xl sm:text-4xl font-extrabold" data-i18n="cta_title">Want to be our first featured project?</h2>
+    <p class="mt-4 text-slate-300" data-i18n="cta_desc">Message us for a free audit and get 25% off your first pack purchase!</p>
+    <div class="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
+      <a href="https://wa.me/212600000000?text=Hello%20ScaleUp%20Marketing%2C%20I%20saw%20your%20portfolio" class="btn px-6 py-4" data-i18n="cta_btn">Boost My Business on WhatsApp</a>
+      <a href="index.html" class="px-6 py-4 rounded-xl font-bold border-2 border-slate-600 hover:border-[#00A3FF] transition" data-i18n="cta_pkg">See packages</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="py-8" style="background:#0B1220;color:#94A3B8;padding-bottom:calc(2rem + env(safe-area-inset-bottom,0px))">
+  <div class="max-w-6xl mx-auto px-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm">
+    <img src="logo-full.png" alt="ScaleUp Marketing" class="h-24 w-auto">
+    <p>© <span id="yr">2026</span> ScaleUp Marketing. <span data-i18n="footer_rights">All rights reserved.</span></p>
+  </div>
+</footer>
+
+<!-- FLOATING 25% DISCOUNT BUTTON -->
+<a href="https://wa.me/212600000000?text=Hello!%20I%20want%20to%20get%2025%25%20OFF%20my%20first%20pack%20purchase!" class="promo-btn btn flex items-center gap-3 px-4 py-3 text-sm shadow-2xl border-2 border-cyan-300" aria-label="First time discount promotion">
+  <span class="text-2xl">🎉</span>
+  <div class="text-left rtl:text-right leading-tight">
+    <div class="text-[10px] uppercase font-extrabold tracking-wider text-amber-300" data-i18n="promo_tag">First Purchase Offer</div>
+    <div class="font-extrabold text-xs sm:text-sm" data-i18n="promo_text">Get 25% OFF Any Pack!</div>
+  </div>
+</a>
+
+<!-- TRANSLATION SCRIPT -->
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+const i18nData = {
+  en: {
+    nav_home: "Home",
+    nav_services: "Services",
+    nav_packages: "Packages",
+    nav_portfolio: "Portfolio",
+    nav_why: "Why Us",
+    nav_contact: "Contact",
+    btn_audit: "Free Audit",
+    port_title: "See what we'd build for <span class=\"gtext\">your business</span>",
+    port_desc: "We're a new agency, so these are sample concepts, not client projects. They show the quality and structure you get with each service.",
+    c1_biz: "Your Business Name",
+    c1_rev: "Reviews",
+    c1_call: "Call",
+    c1_dir: "Directions",
+    c1_web: "Website",
+    c1_tag: "Sample concept · Google My Business",
+    c1_h: "An optimized Google profile",
+    c1_b1: "✅ Verified listing with correct categories",
+    c1_b2: "✅ Professional photos and keywords",
+    c1_b3: "✅ One-tap review link for customers",
+    c2_tag: "Sample concept · Showcase Website",
+    c2_h: "A one-page mobile website",
+    c2_b1: "✅ Services, hours and location on one page",
+    c2_b2: "✅ WhatsApp and click-to-call buttons",
+    c2_b3: "✅ Built to load fast on phones",
+    c3_tag: "Sample concept · Monthly Boost",
+    c3_h: "A monthly progress report",
+    c3_b1: "✅ Profile views, calls and direction requests",
+    c3_b2: "✅ New reviews and replies",
+    c3_b3: "✅ Ads results and next steps",
+    cta_title: "Want to be our first featured project?",
+    cta_desc: "Message us for a free audit and get 25% off your first pack purchase!",
+    cta_btn: "Boost My Business on WhatsApp",
+    cta_pkg: "See packages",
+    footer_rights: "All rights reserved.",
+    promo_tag: "First Purchase Offer",
+    promo_text: "Get 25% OFF Any Pack!"
+  },
+  fr: {
+    nav_home: "Accueil",
+    nav_services: "Services",
+    nav_packages: "Packs",
+    nav_portfolio: "Portfolio",
+    nav_why: "Pourquoi Nous",
+    nav_contact: "Contact",
+    btn_audit: "Audit Gratuit",
+    port_title: "Découvrez ce que nous créons pour <span class=\"gtext\">votre entreprise</span>",
+    port_desc: "Voici des exemples de concepts illustrant la qualité et la structure fournies avec chaque service.",
+    c1_biz: "Nom de votre entreprise",
+    c1_rev: "Avis",
+    c1_call: "Appeler",
+    c1_dir: "Itinéraire",
+    c1_web: "Site web",
+    c1_tag: "Concept · Google My Business",
+    c1_h: "Un profil Google optimisé",
+    c1_b1: "✅ Fiche vérifiée avec catégories exactes",
+    c1_b2: "✅ Photos professionnelles et mots-clés",
+    c1_b3: "✅ Lien d'avis en un clic pour les clients",
+    c2_tag: "Concept · Site Vitrine",
+    c2_h: "Un site web mobile une page",
+    c2_b1: "✅ Services, horaires et adresse sur une page",
+    c2_b2: "✅ Boutons WhatsApp et appel direct",
+    c2_b3: "✅ Chargement ultra-rapide sur téléphone",
+    c3_tag: "Concept · Boost Mensuel",
+    c3_h: "Un rapport de suivi mensuel",
+    c3_b1: "✅ Vues du profil, appels et demandes d'itinéraire",
+    c3_b2: "✅ Nouveaux avis et réponses",
+    c3_b3: "✅ Résultats des annonces et prochaines étapes",
+    cta_title: "Voulez-vous être notre premier projet phare ?",
+    cta_desc: "Contactez-nous pour un audit gratuit et bénéficiez de -25% sur votre premier pack !",
+    cta_btn: "Boostez votre projet sur WhatsApp",
+    cta_pkg: "Voir les packs",
+    footer_rights: "Tous droits réservés.",
+    promo_tag: "Offre Première Commande",
+    promo_text: "Obtenez -25% sur tous les packs !"
+  },
+  ar: {
+    nav_home: "الرئيسية",
+    nav_services: "خدماتنا",
+    nav_packages: "الباقات",
+    nav_portfolio: "أعمالنا",
+    nav_why: "لماذا نحن",
+    nav_contact: "تواصل معنا",
+    btn_audit: "تدقيق مجاني",
+    port_title: "شاهد ما يمكننا إنشاؤه <span class=\"gtext\">لمشروعك</span>",
+    port_desc: "هذه النماذج تعكس الجودة والهيكلية الاحترافية التي ستحصل عليها مع كل خدمة.",
+    c1_biz: "اسم مشروعك التجاري",
+    c1_rev: "التقييمات",
+    c1_call: "اتصال",
+    c1_dir: "الاتجاهات",
+    c1_web: "الموقع",
+    c1_tag: "نموذج · حساب جوجل للأعمال",
+    c1_h: "ملف تجاري محسّن على جوجل",
+    c1_b1: "✅ حساب موثق بفئات صحيحة",
+    c1_b2: "✅ صور احترافية وكلمات مفتاحية",
+    c1_b3: "✅ رابط بضغطة زر لجمع التقييمات",
+    c2_tag: "نموذج · موقع تعريفي",
+    c2_h: "موقع إلكتروني ذكي للهواتف",
+    c2_b1: "✅ الخدمات، أوقات العمل والعنوان في صفحة واحدة",
+    c2_b2: "✅ أزرار مباشرة للواتساب والاتصال",
+    c2_b3: "✅ تصميم سريع وسلس على الهواتف",
+    c3_tag: "نموذج · تعزيز شهري",
+    c3_h: "تقرير تقدم شهري شامل",
+    c3_b1: "✅ مشاهدات الملف، الاتصالات، وطلبات الاتجاهات",
+    c3_b2: "✅ التقييمات الجديدة والردود",
+    c3_b3: "✅ نتائج الإعلانات والخطوات القادمة",
+    cta_title: "هل ترغب في أن تكون مشروعنا المميز القادم؟",
+    cta_desc: "تواصل معنا للحصول على تدقيق مجاني واستفد من خصم 25% على طلبك الأول!",
+    cta_btn: "ارتقِ بعملك عبر واتساب",
+    cta_pkg: "مشاهدة الباقات",
+    footer_rights: "جميع الحقوق محفوظة.",
+    promo_tag: "عرض الشراء الأول",
+    promo_text: "احصل على خصم 25% على أي باقة!"
+  }
+};
+
+function changeLanguage(lang) {
+  const html = document.documentElement;
+  html.setAttribute('lang', lang);
+  html.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+
+  document.querySelectorAll('[data-i18n]').forEach(elem => {
+    const key = elem.getAttribute('data-i18n');
+    if (i18nData[lang] && i18nData[lang][key]) {
+      elem.innerHTML = i18nData[lang][key];
+    }
+  });
+
+  localStorage.setItem('scaleup_lang', lang);
+}
+
+const langSelect = document.getElementById('langSelect');
+langSelect.addEventListener('change', (e) => {
+  changeLanguage(e.target.value);
+});
+
+const savedLang = localStorage.getItem('scaleup_lang') || 'en';
+langSelect.value = savedLang;
+changeLanguage(savedLang);
+</script>
+</body>
+</html>
